@@ -1,0 +1,16 @@
+@use '../Main-css/Variables' as vars;
+@use '../Main-css/Mixins' as mixin;
+
+.catalog-container {
+  @include mixin.grid-container;
+
+  grid-column: 1 / -1;
+  display: grid;
+}
+
+.catalog-grid {
+  @include mixin.grid-container;
+
+  grid-column: 1 / -1;
+  display: grid;
+}

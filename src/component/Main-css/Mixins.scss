@@ -1,0 +1,49 @@
+@use "../Main-css/variables" as vars;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin text-default(
+  $size: 14px,
+  $color: vars.$color-text-main,
+  $weight: 400,
+  $line-height: 21px
+) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  line-height: $line-height;
+  font-family: Mont, sans-serif;
+}
+
+@mixin grid-container() {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  column-gap: 16px;
+  max-width: 1136px;
+
+  @media screen and (max-width: 1199px) {
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 592px;
+  }
+
+  @media screen and (max-width: 639px) {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 320px;
+  }
+}
+
+@mixin on-tablet() {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin on-phone() {
+  @media screen and (max-width: 639px) {
+    @content;
+  }
+}
