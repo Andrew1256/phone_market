@@ -30,6 +30,8 @@ export const PaginationCatalog: React.FC<Props> = ({ products }) => {
     }
   };
 
+  const items = searchParams.get('items');
+
   useEffect(() => {
     const currentPage = searchParams.get('page');
 
@@ -42,7 +44,7 @@ export const PaginationCatalog: React.FC<Props> = ({ products }) => {
         return newParams;
       });
     }
-  }, [searchParams, setSearchParams]);
+  }, [items]);
 
   const itemsInPageParam = parseInt(searchParams.get('items') || '16');
   const buttonsInPage = Math.ceil(products.length / itemsInPageParam);
