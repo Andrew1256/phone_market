@@ -31,7 +31,7 @@ export const PaginationCatalog: React.FC<Props> = ({ products }) => {
   };
 
   const items = searchParams.get('items');
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     const currentPage = searchParams.get('page');
 
@@ -44,6 +44,7 @@ export const PaginationCatalog: React.FC<Props> = ({ products }) => {
         return newParams;
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items]);
 
   const itemsInPageParam = parseInt(searchParams.get('items') || '16');
